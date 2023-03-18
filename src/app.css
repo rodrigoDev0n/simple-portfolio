@@ -1,0 +1,35 @@
+body {
+  background-color: #292d3e;
+  margin: 0;
+  padding: 0;
+  color: #c8d1d9;
+}
+
+* {
+  font-family: 'Roboto Mono', monospace;
+}
+
+/* Animación de aparición */
+
+.fadeIn {
+  animation-name: fadeIn;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  transition: 0.5s;
+}
+
+.textFadeIn {
+  animation-name: fadeIn;
+  animation-duration: 6s;
+  animation-fill-mode: both;
+  transition: 0.5s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
