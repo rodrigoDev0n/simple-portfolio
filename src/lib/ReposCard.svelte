@@ -10,6 +10,7 @@
         reposData.find((repo) => {
             if(repo.description !== null 
                 && repo.language === 'JavaScript'
+                || repo.language === 'Svelte'
             ) {
                 reposRealData = [...reposRealData, repo];
             }
@@ -25,6 +26,12 @@
         <div class="card-body">
             {#each reposRealData as repo}
                 <div class="repo">
+                    {#if repo.language === 'JavaScript'}
+                        <div class="color-ball"></div>
+                    {/if}
+                    {#if repo.language === 'Svelte'}
+                        <div class="color-ball2"></div>
+                    {/if}
                     <a href={repo.html_url} target="_blank">
                         <h4>{repo.name} <i class="fa-solid fa-flag"></i></h4>
                         {#if repo.description == null}
@@ -116,5 +123,19 @@
 
     p {
         color: #c8d1d9;
+    }
+
+    .color-ball {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #fce864;
+    }
+
+    .color-ball2 {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #ea692e;
     }
 </style>
